@@ -33,7 +33,7 @@ nav ul {
 }
 
 nav ul li {
-    margin-left: 30px; /* Increased space between nav items */
+    margin-left: 30px; /* Space between nav items */
 }
 
 nav ul li a {
@@ -161,52 +161,227 @@ nav ul li a:hover {
     margin-top: 5px;
 }
 
-.skills-section{
+.skills-section {
     text-align: center;
 }
 
-.skills-section h2{
+.skills-section h2 {
     color: rgb(55, 184, 236);
     font-size: 36px;
     margin-bottom: 50px;
 }
 
+/* Projects Section */
+.projects-section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.projects-section h2 {
+    color: rgb(55, 184, 236);
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
 .projects-section .project {
     margin-bottom: 20px; /* Space between projects */
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #dcdcdc;
+    box-shadow: 0px 0px 10px rgba(235, 202, 150, 0.1);
+    max-width: 300px;
+    margin: 0 auto 20px auto; /* Center the project box */
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.project:hover {
+    transform: translateY(-5px);
+}
+
+.project-image {
+    width: 30%;
+    max-width: 100px;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.project-description {
+    display: none; /* Hide the descriptions initially */
+    font-size: 16px;
+    color: #333;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
 .project-heading {
     margin: 0;
     font-size: 24px; 
     color: rgb(232, 128, 30);
+    margin-bottom: 10px;
 }
 
 .project-description {
     font-size: 18px;
+    color: #333; /* Darker text color for better readability */
 }
 
-.projects-section h2{
-    color: rgb(55, 184, 236);
-    font-size: 36px;
-    margin-bottom: 20px;
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Space between project boxes */
 }
 
-.contact-details p {
-    font-size: 18px;
-    margin-bottom: 10px;
+.project {
+    flex: 1 1 calc(50% - 20px); /* Two boxes per row, accounting for the gap */
+    max-width: calc(50% - 20px);
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #dcdcdc;
+    box-shadow: 0px 0px 10px rgba(235, 202, 150, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s;
 }
 
-.contact-details a {
-    color: rgb(55, 184, 236);
-    text-decoration: none;
-}
-
-.contact-details a:hover {
-    text-decoration: underline;
+/* Contact Me Section */
+.contact-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 20px;
 }
 
 .contact-section h2 {
-    color: rgb(30, 213, 246); /* Change this to your desired color */
-    font-size: 36px; /* Adjust font size if needed */
-    margin-bottom: 20px; /* Space below the heading */
+    font-size: 32px; 
+    margin-bottom: 20px; 
+    color: #3498db; 
+    text-align: center;
+}
+
+.contact-form {
+    width: 100%;
+    max-width: 600px;
+    background-color: #262538;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: rgb(55, 184, 236);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: rgb(45, 164, 206);
+}
+
+/* Media Queries */
+
+/* Styles for tablets and above */
+@media (min-width: 768px) {
+    .content {
+        flex-direction: row;
+    }
+
+    .right-side img, .about-photo img {
+        max-width: 60%; /* Larger image size for tablets */
+    }
+
+    .projects-container {
+        flex-wrap: nowrap;
+    }
+
+    .project {
+        flex: 1 1 45%; /* Two projects per row */
+    }
+
+    .contact-section {
+        padding: 70px 20px;
+    }
+}
+
+/* Styles for large screens (desktops) */
+@media (min-width: 1024px) {
+    .right-side img, .about-photo img {
+        max-width: 50%; /* Even larger image size */
+    }
+
+    .project {
+        flex: 1 1 30%; /* More projects per row */
+    }
+
+    .contact-section {
+        padding: 100px 20px;
+    }
+}
+
+/* Styles for smaller screens (mobiles) */
+@media (max-width: 768px) {
+    nav ul {
+        display: none; /* Hide the navigation links */
+    }
+
+    nav::before {
+        content: "☰";
+        display: block;
+        font-size: 30px;
+        cursor: pointer;
+        color: white;
+    }
+
+    .content {
+        flex-direction: column;
+        padding: 100px 20px; /* Extra padding to avoid overlap with fixed nav */
+    }
+
+    .right-side, .about-content, .skills-icons, .projects-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .right-side img, .about-photo img {
+        max-width: 80%; /* Smaller image size for mobile */
+    }
+
+    .projects-container {
+        flex-wrap: wrap;
+    }
+
+    .project {
+        flex: 1 1 100%; /* One project per row */
+        max-width: 100%;
+    }
+
+    .contact-form {
+        width: 100%;
+    }
 }

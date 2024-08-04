@@ -91,41 +91,67 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="projects-section">
-        <h2>Projects</h2>
-        <div class="project">
-            <h3 class="project-heading">Medication Reminder</h3>
-            <p class="project-description">A web app that helps users keep track of their medication schedule with reminders and notifications.</p>
-        </div>
-        <div class="project">
-            <h3 class="project-heading">To-Do List</h3>
-            <p class="project-description">A simple to-do list application with features for adding, editing, and removing tasks.</p>
-        </div>
-        <div class="project">
-            <h3 class="project-heading">Fetch and Display Data from API</h3>
-            <p class="project-description">I created a shopping app that efficiently fetches and displays data from an API, providing users with real-time product information.</p>
-        </div>
-        <div class="project">
-            <h3 class="project-heading">PhoneBook</h3>
-            <p class="project-description">I developed a PhoneBook application that allows users to effortlessly add, update, and delete contact details. The app ensures easy management and organization of personal and professional contacts.</p>
-        </div>
-        <div class="project">
-            <h3 class="project-heading">IdCard</h3>
-            <p class="project-description">I created an ID Card management application that enables users to add, update, and delete card details efficiently. The app ensures seamless management and organization of ID information.</p>
-        </div>
+<section id="projects" class="projects-section">
+    <h2>Projects</h2>
+    <div class="project" onclick="toggleDescription('project1-desc')">
+        <h3 class="project-heading">Medication Reminder</h3>
+        <img src="images\medication remainder.png" alt="Medication Reminder" class="project-image">
+        <p class="project-description" id="project1-desc">A web app that helps users keep track of their medication schedule with reminders and notifications.</p>
+    </div>
+    <div class="project" onclick="toggleDescription('project2-desc')">
+        <h3 class="project-heading">To-Do List</h3>
+        <img src="images\Screenshot 2024-08-04 025047.png" alt="To-Do List" class="project-image">
+        <p class="project-description" id="project2-desc">A simple to-do list application with features for adding, editing, and removing tasks.</p>
+    </div>
+    <div class="project" onclick="toggleDescription('project3-desc')">
+        <h3 class="project-heading">Fetch and Display Data from API</h3>
+        <img src="images\Screenshot 2024-08-04 030446.png" alt="Fetch and Display Data from API" class="project-image">
+        <p class="project-description" id="project3-desc">A shopping app that efficiently fetches and displays data from an API, providing users with real-time product information.</p>
+    </div>
+    <div class="project" onclick="toggleDescription('project4-desc')">
+        <h3 class="project-heading">PhoneBook</h3>
+        <img src="images\Screenshot 2024-08-04 031605.png" alt="PhoneBook" class="project-image">
+        <p class="project-description" id="project4-desc">A PhoneBook application that allows users to effortlessly add, update, and delete contact details.</p>
+    </div>
+    <div class="project" onclick="toggleDescription('project5-desc')">
+        <h3 class="project-heading">IdCard</h3>
+        <img src="images\Screenshot 2024-08-04 031816.png" alt="IdCard" class="project-image">
+        <p class="project-description" id="project5-desc">An ID Card management application that enables users to add, update, and delete card details efficiently.</p>
+    </div>
+        <script>
+            function toggleDescription(id) {
+                var desc = document.getElementById(id);
+                if (desc.style.display === "none" || desc.style.display === "") {
+                    desc.style.display = "block";
+                } else {
+                    desc.style.display = "none";
+                }
+            }
+            </script>
+            
     </section>
 
-    <!-- Contact Me Section -->
     <section id="contact" class="contact-section">
         <h2>Contact Me</h2>
-        <div class="contact-details">
-            <p><strong>Phone:</strong> 9381636306</p>
-            <p><strong>Email:</strong> <a href="mailto:gowribhagyasriasapu@gmail.com">gowribhagyasriasapu@gmail.com</a></p>
-            <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/gowri-bhagyasri-asapu-7ba97b266" target="_blank">linkedin.com/in/gowri-bhagyasri-asapu-7ba97b266</a></p>
-            <p><strong>GitHub:</strong> <a href="https://github.com/Bhagyasri101" target="_blank">github.com/Bhagyasri101</a></p>
+        <div class="contact-form">
+            
+            <form action="#" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Name" required>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Email" required>
+
+                
+
+                
+            </form>
         </div>
     </section>
-
+   
     <script src="scripts.js"></script>
 </body>
 </html>
