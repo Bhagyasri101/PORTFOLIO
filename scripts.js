@@ -11,3 +11,4 @@ document.querySelectorAll('nav ul li a[href^="#"]').forEach(anchor => {
 function toggleFlip(element) {
     element.classList.toggle('flipped');
 }
+
